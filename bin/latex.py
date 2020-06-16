@@ -201,6 +201,7 @@ def build_contest_pdf(contest, problems, tmpdir, solutions=False, web=False):
                        config.tools_root / 'latex/solutions-base.tex')
     ensure_symlink(builddir / 'bapc.cls', config.tools_root / 'latex/bapc.cls')
     ensure_symlink(builddir / 'images', config.tools_root / 'latex/images')
+    ensure_symlink(builddir / 'second-page.tex', Path('second-page.tex'))
     ensure_symlink(builddir / main_file, config.tools_root / 'latex' / main_file)
 
     config_data = util.read_yaml(Path('contest.yaml'))

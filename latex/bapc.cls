@@ -27,7 +27,7 @@
 		\thispagestyle{empty}
 		\vfill
 		\begin{center}
-			\huge{This page is intentionally left blank.}
+			\huge{Deze pagina is leeg.}
 			%\includegraphics{images/blank-page-fr.png}
 		\end{center}
 		\vspace*{5.55cm} % slightly above vertical centre.
@@ -76,7 +76,7 @@
 % turned out to be a lot easier in terms of custom formatting.
 %-------------------------------------------------------------------------------
 \renewcommand{\thesection}{\problemlabel}
-\newlistof{listofproblems}{lop}{Problems}
+\newlistof{listofproblems}{lop}{Problemen}
 \newcounter{SampleCount}
 \renewcommand{\printloptitle}[1]{
 	\outline{1}[problems]{#1}
@@ -93,8 +93,8 @@
 
 \newcommand{\timelimit}{TIMELIMIT MISSING}
 \newcommand{\problemlabel}{} % Empty to hide activity chart
-\newcommand{\problemyamlname}{Problem name}
-\newcommand{\problemauthor}{Problem author}
+\newcommand{\problemyamlname}{Naam probleem}
+\newcommand{\problemauthor}{Auteur probleem}
 \newcommand{\fullproblemtitle}{\problemlabel: \problemyamlname}
 
 \newcommand{\problemname}[1]{
@@ -106,7 +106,7 @@
 	}
 	\vspace{-2.3em}
 	\hfill
-	\ifdefempty{\timelimit}{}{\color{darkgray}\fontfamily{qcr}Time limit: \timelimit{}s}
+	\ifdefempty{\timelimit}{}{\color{darkgray}\fontfamily{qcr}Tijdslimiet: \timelimit{}s}
 	\ifblank{#1}{
 		\outline[]{1}[\thesection]{\problemyamlname}
 	}{
@@ -139,7 +139,7 @@
 %-------------------------------------------------------------------------------
 \copypagestyle{bapc}{headings}
 \makepsmarks{bapc}{
-	\createmark{section}{both}{shownumber}{Problem }{: }
+	\createmark{section}{both}{shownumber}{Probleem }{: }
 }
 \pagestyle{bapc}
 \nouppercaseheads
@@ -149,16 +149,19 @@
 % Environments for specifying Input, Output and optionally Explanation.
 %-------------------------------------------------------------------------------
 \newenvironment{Input}{
-	\subsection*{Input}
+	\subsection*{Invoer}
 }{}
 \newenvironment{Output}{
-	\subsection*{Output}
+	\subsection*{Uitvoer}
 }{}
 \newenvironment{Interaction}{
-	\subsection*{Interaction}
+	\subsection*{Interactie}
 }{}
 \newenvironment{Explanation}{
-	\subsection*{Explanation of samples}
+	\subsection*{Uitleg van voorbeelden}
+}{}
+\newenvironment{Deelscores}{
+	\subsection*{Deelscores}
 }{}
 
 %-------------------------------------------------------------------------------
@@ -182,7 +185,7 @@
 % A solution to this problem was found on http://tex.stackexchange.com/a/111488 .
 %-------------------------------------------------------------------------------
 \newcommand{\mySampleHeading}[1]{
-	\multicolumn{1}{l}{\large \bfseries\textrm{Sample #1 \arabic{SampleCount}}}
+	\multicolumn{1}{l}{\large \bfseries\textrm{Voorbeeld #1 \arabic{SampleCount}}}
 }
 \NewEnviron{Sample}{
 	\par\bigskip\noindent%
@@ -193,7 +196,7 @@
 	\renewcommand\baselinestretch{1}\selectfont% <-- combining various lengths in order
 	\setlength{\extrarowheight}{2.5pt}%              to set the top and bottom padding; see
 	\begin{tabularx}{\textwidth}{|X|X|}%             http://tex.stackexchange.com/a/31704
-		\mySampleHeading{Input} & \mySampleHeading{Output} \\
+		\mySampleHeading{invoer} & \mySampleHeading{uitvoer} \\
 		\hline
 		\BODY[2pt]
 		\hline

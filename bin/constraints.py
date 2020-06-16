@@ -45,7 +45,7 @@ def check_constraints(problem, settings):
                         if v2 is not None and mo.group(v2) is not None:
                             defs_validators.append([mo.group(name) or '', mo.group(v2)])
 
-    statement = problem.path / 'problem_statement/problem.en.tex'
+    statement = problem.path / 'problem_statement/problem.nl.tex'
     #latex_define = re.compile(r'^\\newcommand{\\\\(\w+)}{(.*)}$')
     latex_defines = [
         (re.compile(r'{\\\\(\w+)}{(.*)}'), 1, 2, False),
