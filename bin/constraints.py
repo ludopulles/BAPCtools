@@ -59,7 +59,7 @@ def check_constraints(problem):
     defs_validators.append('OUTPUT')
     f(ans_constraints)
 
-    statement = problem.path / 'problem_statement/problem.en.tex'
+    statement = problem.path / 'problem_statement/problem.nl.tex'
     latex_defines = [
         (re.compile(r'(?:new|newcommand|define).*{\\(\w+)}{(.*)}'), 1, 2, False),
         (re.compile(r'\$([^\$]*(?:\\leq|\\geq|\\le|\\ge|<|>|=)[^\$]*)\$'), 1, None, True),
