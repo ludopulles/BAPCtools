@@ -23,7 +23,7 @@
 % it is decorated with the text "This is not a blank page".
 %-------------------------------------------------------------------------------
 
-\newcommand{\defaultblankpagetext}{This page is intentionally left blank.}
+\newcommand{\defaultblankpagetext}{Deze pagina is leeg.}
 
 \newcommand{\ThisIsNotABlankPage}{
 	\cleartooddpage[
@@ -85,9 +85,9 @@
 % turned out to be a lot easier in terms of custom formatting.
 %-------------------------------------------------------------------------------
 \renewcommand{\thesection}{\problemlabel}
-\newcommand{\listofproblemsname}{Problems}
+\newcommand{\listofproblemsname}{Opgaven}
 \newlistof{listofproblems}{lop}{\listofproblemsname}
-\newlistentry{problem}{lop}{0}
+\newlistentry{opgave}{lop}{0}
 \newcounter{SampleCount}
 \renewcommand{\printloptitle}[1]{
 	\hfill
@@ -113,7 +113,7 @@
 	}
 	\vspace{-2.3em}
 	\hfill
-	\ifdefempty{\timelimit}{}{{\color{darkgray}\fontfamily{qcr}Time limit: \timelimit{}s}}
+	\ifdefempty{\timelimit}{}{{\color{darkgray}\fontfamily{qcr}Tijdslimiet: \timelimit{}s}}
 
 	\setcounter{SampleCount}{0}
 	\setcounter{figure}{0}
@@ -142,7 +142,7 @@
 %-------------------------------------------------------------------------------
 \copypagestyle{bapc}{headings}
 \makepsmarks{bapc}{
-	\createmark{section}{both}{shownumber}{Problem }{: }
+	\createmark{section}{both}{shownumber}{Probleem }{: }
 }
 \pagestyle{bapc}
 \nouppercaseheads
@@ -152,16 +152,19 @@
 % Environments for specifying Input, Output and optionally Explanation.
 %-------------------------------------------------------------------------------
 \newenvironment{Input}{
-	\subsection*{Input}
+	\subsection*{Invoer}
 }{}
 \newenvironment{Output}{
-	\subsection*{Output}
+	\subsection*{Uitvoer}
 }{}
 \newenvironment{Interaction}{
-	\subsection*{Interaction}
+	\subsection*{Interactie}
 }{}
 \newenvironment{Explanation}{
-	\subsection*{Explanation of samples}
+	\subsection*{Uitleg van voorbeelden}
+}{}
+\newenvironment{Deelscores}{
+	\subsection*{Deelscores}
 }{}
 
 %-------------------------------------------------------------------------------
@@ -185,7 +188,7 @@
 % A solution to this problem was found on http://tex.stackexchange.com/a/111488 .
 %-------------------------------------------------------------------------------
 \newcommand{\mySampleHeading}[1]{
-	\multicolumn{1}{l}{\large \bfseries\textrm{Sample #1 \arabic{SampleCount}}}
+	\multicolumn{1}{l}{\large \bfseries\textrm{Voorbeeld #1 \arabic{SampleCount}}}
 }
 \NewEnviron{Sample}{
 	\par\bigskip\noindent%
@@ -196,7 +199,7 @@
 	\renewcommand\baselinestretch{1}\selectfont% <-- combining various lengths in order
 	\setlength{\extrarowheight}{2.5pt}%              to set the top and bottom padding; see
 	\begin{tabularx}{\textwidth}{|X|X|}%             http://tex.stackexchange.com/a/31704
-		\mySampleHeading{Input} & \mySampleHeading{Output} \\
+		\mySampleHeading{invoer} & \mySampleHeading{uitvoer} \\
 		\hline
 		\BODY[2pt]
 		\hline
