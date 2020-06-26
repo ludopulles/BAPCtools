@@ -415,11 +415,11 @@ def ensure_symlink(link, target, output=False, relative=False):
         if not relative and is_absolute: return
         #if relative and not is_absolute: return
 
-    if link.is_symlink() or link.exists():
-        if link.is_dir():
-            shutil.rmtree(link)
-        else:
-            link.unlink()
+    if link.is_symlink() or link.is_file():
+        link.unlink()
+    elif link.is_dir():
+        shutil.rmtree(link)
+
     if relative:
         # Rewrite target to be relative to link.
         rel_target = os.path.relpath(target, link.parent)
