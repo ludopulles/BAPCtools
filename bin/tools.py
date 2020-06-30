@@ -100,7 +100,8 @@ def get_problems():
                 shortname = p['id']
                 if 'label' in p: label = p['label']
                 if label == '': fatal(f'Found empty label for problem {shortname}')
-                nextlabel = label[:-1] + chr(ord(label[-1]) + 1)
+                if type(label) == str:
+                    nextlabel = label[:-1] + chr(ord(label[-1]) + 1)
                 if label in labels:
                     fatal(
                         f'label {label} found twice for problem {shortname} and {labels[label]}.')
