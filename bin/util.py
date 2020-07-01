@@ -431,7 +431,10 @@ def ensure_symlink(link, target, output=False, relative=False):
 def substitute(data, variables):
     for key in variables:
         r = ''
-        if variables[key] != None: r = variables[key]
+        if variables[key] != None:
+            r = variables[key]
+            if type(r) is float:
+                r = str(r).replace('.', ',')
         data = data.replace('{%' + key + '%}', str(r))
     return data
 
