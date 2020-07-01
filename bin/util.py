@@ -747,6 +747,8 @@ def substitute(data, variables):
         r = ''
         if variables[key] != None:
             r = variables[key]
+            if type(r) is float:
+                r = str(r).replace('.', ',')
         data = data.replace('{%' + key + '%}', str(r))
     return data
 
