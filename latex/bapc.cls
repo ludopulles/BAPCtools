@@ -142,7 +142,7 @@
 %-------------------------------------------------------------------------------
 \copypagestyle{bapc}{headings}
 \makepsmarks{bapc}{
-	\createmark{section}{both}{shownumber}{Probleem }{: }
+	\createmark{section}{both}{shownumber}{Opgave }{: }
 }
 \pagestyle{bapc}
 \nouppercaseheads
