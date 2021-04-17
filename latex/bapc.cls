@@ -320,7 +320,7 @@
 %-------------------------------------------------------------------------------
 % The following are required for the overall layout:
 %-------------------------------------------------------------------------------
-\usepackage[english]{babel}
+\usepackage[dutch]{babel}
 \usepackage{lmodern}
 \usepackage{graphicx}
 \usepackage{courier}
