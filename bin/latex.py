@@ -414,6 +414,10 @@ def build_contest_pdf(contest, problems, tmpdir, language, solutions=False, web=
 
     problems_data = ''
 
+    secondpage = Path('./second-page.tex')
+    if secondpage.exists():
+        problems_data += f'\\input{{{secondpage.absolute().as_posix()}}}\n'
+
     if solutions:
         # include a header slide in the solutions PDF
         headerlangtex = Path(f'solution_header.{language}.tex')
