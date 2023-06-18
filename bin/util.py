@@ -1108,6 +1108,8 @@ def exec_command(
 
 
 def inc_label(label):
+    if isinstance(label, int):
+        return label + 1
     for x in range(len(label) - 1, -1, -1):
         if label[x] != 'Z':
             label = label[:x] + chr(ord(label[x]) + 1) + label[x + 1 :]
