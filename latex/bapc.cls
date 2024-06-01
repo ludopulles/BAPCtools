@@ -169,6 +169,10 @@
 \newenvironment{Explanation}{
 	\subsection*{\langexplanation{}}
 }{\par}
+\newenvironment{Deelscores}{
+	\subsection*{Deelscores}
+}{\par}
+
 
 %-------------------------------------------------------------------------------
 % Environment for specifying Samples.
