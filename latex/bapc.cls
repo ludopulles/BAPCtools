@@ -170,7 +170,7 @@
 	\subsection*{\langexplanation{}}
 }{\par}
 \newenvironment{Deelscores}{
-	\subsection*{Deelscores}
+	\subsection*{\langsubtasks{}}
 }{\par}
 
 
